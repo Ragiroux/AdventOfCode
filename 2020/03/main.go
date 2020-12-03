@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"log"
 	"os"
-	"strconv"
 )
 
 func readFile(filename string) []string {
@@ -27,14 +26,6 @@ func readFile(filename string) []string {
 	return txtlines
 }
 
-func convertToInt(s string) int {
-	i, err := strconv.Atoi(s)
-	if err != nil {
-		log.Fatal(err)
-	}
-	return i
-}
-
 func part1(lines []string, originalX int, originalY int, slopeX int, slopeY int, treesFound int) int {
 	if slopeY >= len(lines) {
 		return treesFound
@@ -44,14 +35,6 @@ func part1(lines []string, originalX int, originalY int, slopeX int, slopeY int,
 		return part1(lines, originalX, originalY, slopeX+originalX, slopeY+originalY, treesFound+1)
 	}
 	return part1(lines, originalX, originalY, slopeX+originalX, slopeY+originalY, treesFound)
-}
-
-func part2(lines []string) int {
-	return -1
-}
-
-func xor(x bool, y bool) bool {
-	return x != y
 }
 
 func main() {
