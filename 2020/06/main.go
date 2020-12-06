@@ -54,7 +54,7 @@ func part2(lines []string) int {
 				total += len(s)
 			} else {
 				for _, value := range s {
-					if value > 1 {
+					if value > 1 && value == members {
 						total++
 					}
 				}
