@@ -66,8 +66,14 @@ func part1(lines []string) []int {
 	return seatId
 }
 
-func part2(lines []string) int {
-	return -1
+func part2(ids []int) int {
+	var XOR = 0
+	var n = len(ids)
+
+	for i := 0; i < n; i++ {
+		XOR ^= (ids[i] + 1)
+	}
+	return XOR
 }
 
 func convertToInt(s string) int {
@@ -88,7 +94,7 @@ func main() {
 	}
 	println("part1 result :", result1)
 
-	result2 := part2(lines)
+	result2 := part2(result1)
 	println("part2 result :", result2)
 
 }
