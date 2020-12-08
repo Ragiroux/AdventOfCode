@@ -125,13 +125,10 @@ func main() {
 		instructions = append(instructions, instr)
 	}
 
-	//result1 := execution(instructions, 0, 0)
-	//println("part1 result :", result1)
+	result1 := execution(instructions, 0, 0)
+	println("part1 result :", result1)
 
 	for i := 0; i < len(instructions); i++ {
-		if i == 7 {
-			println("swag")
-		}
 		result2 := execution2(instructions, 0, 0, i)
 		if result2 > -1 {
 			println("part2 result :", result2)
